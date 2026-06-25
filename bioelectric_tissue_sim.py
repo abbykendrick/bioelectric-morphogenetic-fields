@@ -1,5 +1,3 @@
-### File: `bioelectric_tissue_sim.py`
-```python
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -16,8 +14,9 @@ class BioelectricTissueSimulator:
         # Initialize tissue layers
         self.v_mem = np.zeros((grid_size, grid_size)) 
         self.target_morphology = np.zeros((grid_size, grid_size)) 
-        self.cellular_identity = np.ones((grid_size, grid_size)) 
+        self.cellular_identity = np.ones((grid_size, grid_size))
         
+        # Run initialization
         self._initialize_target_geometry()
 
     def _initialize_target_geometry(self):
@@ -97,4 +96,3 @@ if __name__ == "__main__":
     tissue = BioelectricTissueSimulator(grid_size=60, diffusion_rate=0.2)
     tissue.execute_amputation(start_xy=(25, 25), end_xy=(42, 42))
     tissue.run_simulation_animation(total_steps=100)
-```
